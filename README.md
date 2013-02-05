@@ -6,7 +6,7 @@ This project is a modified fork of the [rails-dev-box](https://github.com/rails/
 
 ## Requirements
 
-For using this box you first have to install:
+You need to install:
 
 1. [VirtualBox](https://www.virtualbox.org)
 
