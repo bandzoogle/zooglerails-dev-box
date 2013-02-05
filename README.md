@@ -16,7 +16,7 @@ You need to install:
 
 1. Build the virtual machine
 
-    ```bash
+    ```
     git clone https://github.com/jorgemanrubia/z-dev-box
     cd z-dev-box
     vagrant up
