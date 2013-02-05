@@ -1,4 +1,4 @@
-# z-test-box
+# z-dev-box
 
 This is a vagrant box for Rails development that includes MySQL and other common dependencies. This project is a modified fork of the [rails-dev-box](https://github.com/rails/rails-dev-box) by @fxn. All the kudos to him.
 
