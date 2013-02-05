@@ -4,7 +4,7 @@ This is a [Vagrant](http://www.vagrantup.com/) box for Rails development that in
 
 This project is a modified fork of the [rails-dev-box](https://github.com/rails/rails-dev-box) by [@fxn](https://github.com/fxn). All the kudos to him.
 
-## Dependencies
+## Requirements
 
 For using this box you first have to install:
 
