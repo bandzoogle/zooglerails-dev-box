@@ -60,6 +60,10 @@ It is a minimal Ubuntu (Precise Pangolin) containing:
 
 ## Documentation
 
+Init an SSH session in the Virtual Machine:
+
+    vagrant ssh
+
 When done just log out with `^D` and suspend the virtual machine
 
     vagrant suspend
