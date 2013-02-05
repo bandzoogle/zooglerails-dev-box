@@ -38,7 +38,7 @@ You need to install:
 
 The recommended workflow is
 
-* Edit in the host computer, when you have your editor
+* Edit in the host computer where you have your editor, git and your SSH keys properly configured
 
 * Test and run things in the virtual machine
 
