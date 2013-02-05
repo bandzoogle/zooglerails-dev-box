@@ -10,7 +10,7 @@ This is a vagrant box for Rails development that includes MySQL and other common
 
 ## How To Build The Virtual Machine
 
-    host $ git clone https://github.com/jorgemanrubia/z-test-box
+    host $ git clone https://github.com/jorgemanrubia/z-dev-box
     host $ cd z-dev-box
     host $ vagrant up
 
