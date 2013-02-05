@@ -1,6 +1,6 @@
 # z-dev-box
 
-This is a vagrant box for Rails development that includes MySQL and other common dependencies.
+This is a [Vagrant](http://www.vagrantup.com/) box for Rails development that includes MySQL and other common dependencies.
 
 This project is a modified fork of the [rails-dev-box](https://github.com/rails/rails-dev-box) by [@fxn](https://github.com/fxn). All the kudos to him.
 
@@ -16,27 +16,32 @@ For using this box you first have to install:
 
 In order to create the virtual machine:
 
-    git clone https://github.com/jorgemanrubia/z-dev-box
-    cd z-dev-box
-    vagrant up
 
 ## Usage
 
-1. Clone the repo containing the code you want to edit in the VM directory
+1. Build the virtual machine
+
+    ```bash
+    git clone https://github.com/jorgemanrubia/z-dev-box
+    cd z-dev-box
+    vagrant up
+    ```
+
+2. Clone the repo containing the code you want to edit inside the VM folder:
 
     ```bash
     git clone https://github.com/jorgemanrubia/some-repo.git
     ls # README.md puppet Vagrantfile some-repo
     ```
 
-2. Now you can connect to the virtual machine and check the source code in the shared directory `/vagrant` mounted in the virtual box
+3. Now you can connect to the virtual machine and check the source code in the shared directory `/vagrant` mounted in the virtual box:
 
     ```bash
     vagrant ssh 
     ls /vagrant # README.md puppet Vagrantfile some-repo
     ```
 
-Now everything is set up. The recommended workflow is
+The recommended workflow is
 
 * Edit in the host computer, when you have your editor
 
