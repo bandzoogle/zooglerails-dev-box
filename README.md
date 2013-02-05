@@ -1,20 +1,50 @@
 # z-dev-box
 
-This is a vagrant box for Rails development that includes MySQL and other common dependencies. This project is a modified fork of the [rails-dev-box](https://github.com/rails/rails-dev-box) by @fxn. All the kudos to him.
+This is a vagrant box for Rails development that includes MySQL and other common dependencies.
 
-## Requirements
+This project is a modified fork of the [rails-dev-box](https://github.com/rails/rails-dev-box) by [@fxn](https://github.com/fxn). All the kudos to him.
 
-* [VirtualBox](https://www.virtualbox.org)
+## Dependencies
 
-* [Vagrant](http://vagrantup.com)
+For using this box you first have to install:
 
-## How To Build The Virtual Machine
+1. [VirtualBox](https://www.virtualbox.org)
 
-    host $ git clone https://github.com/jorgemanrubia/z-dev-box
-    host $ cd z-dev-box
-    host $ vagrant up
+2. [Vagrant](http://vagrantup.com)
 
-## What's In The Box
+## Installation
+
+In order to create the virtual machine:
+
+    git clone https://github.com/jorgemanrubia/z-dev-box
+    cd z-dev-box
+    vagrant up
+
+## Usage
+
+1. Clone the repo containing the code you want to edit in the VM directory
+
+    ```bash
+    git clone https://github.com/jorgemanrubia/some-repo.git
+    ls # README.md puppet Vagrantfile some-repo
+    ```
+
+2. Now you can connect to the virtual machine and check the source code in the shared directory `/vagrant` mounted in the virtual box
+
+    ```bash
+    vagrant ssh 
+    ls /vagrant # README.md puppet Vagrantfile some-repo
+    ```
+
+Now everything is set up. The recommended workflow is
+
+* Edit in the host computer, when you have your editor
+
+* Test and run things in the virtual machine
+
+## Box contents
+
+It is a minimal Ubuntu (Precise Pangolin) containing:
 
 * Git
 
@@ -28,55 +58,6 @@ This is a vagrant box for Rails development that includes MySQL and other common
 
 * System dependencies for nokogiri, mysql, capybara-webkit and imagemagick
 
-## Recommended Workflow
-
-The recommended workflow is
-
-* edit in the host computer and
-
-* test within the virtual machine.
-
-Just clone your repo fork in the very directory of the Rails development box in the host computer:
-
-    host $ ls
-    README.md   Vagrantfile puppet
-    host $ git clone <your target git repo>
-
-Vagrant mounts that very directory as _/vagrant_ within the virtual machine:
-
-    vagrant@rails-dev-box:~$ ls /vagrant
-    puppet  rails  README.md  Vagrantfile
-
-so we are ready to go to edit in the host, and test in the virtual machine.
-
-This workflow is convenient because in the host computer one normally has his editor of choice fine-tuned, Git configured, and SSH keys in place.
-
-## Virtual Machine Management
-
-When done just log out with `^D` and suspend the virtual machine
-
-    host $ vagrant suspend
-
-then, resume to hack again
-
-    host $ vagrant resume
-
-Run
-
-    host $ vagrant halt
-
-to shutdown the virtual machine, and
-
-    host $ vagrant up
-
-to boot it again.
-
-You can find out the state of a virtual machine anytime by invoking
-
-    host $ vagrant status
-
-Finally, to completely wipe the virtual machine from the disk **destroying all its contents**:
-
-    host $ vagrant destroy # DANGER: all is gone
+## Documentation
 
 Please check the [Vagrant documentation](http://vagrantup.com/v1/docs/index.html) for more information on Vagrant.
