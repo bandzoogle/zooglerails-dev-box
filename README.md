@@ -12,11 +12,6 @@ For using this box you first have to install:
 
 2. [Vagrant](http://vagrantup.com)
 
-## Installation
-
-In order to create the virtual machine:
-
-
 ## Usage
 
 1. Build the virtual machine
