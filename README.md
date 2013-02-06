@@ -56,7 +56,7 @@ It is a minimal Ubuntu (Precise Pangolin) containing:
 
 * MySQL
 
-* Imagemagick
+* ImageMagick
 
 * System dependencies for nokogiri, mysql, capybara-webkit and imagemagick
 
