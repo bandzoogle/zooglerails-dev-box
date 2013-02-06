@@ -29,7 +29,13 @@ class install_mysql {
     ensure => installed
   }
 }
+
 class { 'install_mysql': }
+
+
+package { 'make':
+  ensure => installed
+}
 
 package { 'curl':
   ensure => installed
