@@ -22,18 +22,18 @@ You need to install:
     vagrant up
     ```
 
-2. Clone the repo containing the code you want to edit inside the VM folder:
+2. Clone the repo containing the Rails app you want to run in the VM. Do it inside the VM folder.
 
     ```bash
-    git clone https://github.com/jorgemanrubia/some-repo.git
-    ls # README.md puppet Vagrantfile some-repo
+    git clone https://github.com/jorgemanrubia/some-rails-app.git
+    ls # README.md puppet Vagrantfile some-rails-app
     ```
 
 3. Now you can connect to the VM via SSH. The shared directory `/vagrant` in the VM is linked to the VM folder in the host computer:
 
     ```bash
     vagrant ssh 
-    ls /vagrant # README.md puppet Vagrantfile some-repo
+    ls /vagrant # README.md puppet Vagrantfile some-rails-app
     ```
 
 The recommended workflow is
