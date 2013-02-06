@@ -43,7 +43,7 @@ package { ['libxml2', 'libxml2-dev', 'libxslt1-dev']:
   ensure => installed
 }
 
-package { ['libcurl3', 'libcurl3-gnutls', 'libcurl4-openssl-dev', 'libgeoip-dev', 'libmagick++-dev', 'libqt4-dev']:
+package { ['libcurl3', 'libcurl3-gnutls', 'libcurl4-openssl-dev', 'libgeoip-dev', 'imagemagick', 'libmagick++-dev', 'libqt4-dev']:
   ensure => installed
 }
 
