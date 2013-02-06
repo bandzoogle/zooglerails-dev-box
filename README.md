@@ -29,7 +29,7 @@ You need to install:
     ls # README.md puppet Vagrantfile some-repo
     ```
 
-3. Now you can connect to the virtual machine and check the source code in the shared directory `/vagrant` mounted in the virtual box:
+3. Now you can connect to the VM via SSH. The shared directory `/vagrant` in the VM is linked to the VM folder in the host computer:
 
     ```bash
     vagrant ssh 
@@ -55,6 +55,8 @@ It is a minimal Ubuntu (Precise Pangolin) containing:
 * Bundler
 
 * MySQL
+
+* Imagemagick
 
 * System dependencies for nokogiri, mysql, capybara-webkit and imagemagick
 
