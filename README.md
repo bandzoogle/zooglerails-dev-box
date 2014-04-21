@@ -42,21 +42,23 @@ Execute the following commands in the terminal:
 
         foreman start
 
-If you are on Mac, Pow is recommended:
+7. The app needs to be serverd from bandzoogle.dev (no localhost or 0.0.0.0)
 
-1. Install [pow](http://pow.cx/)
+        1. If you are on Mac, Pow is recommended:
+
+                1. Install [pow](http://pow.cx/)
         
-        curl get.pow.cx | sh
+                        curl get.pow.cx | sh
 
-2. In a fresh terminal window
+                2. In a fresh terminal window
 
-        cd ~/.pow
-        echo 3000 > banzdoogle
+                        cd ~/.pow
+                        echo 3000 > banzdoogle
 
-If you are not on Mac, you need to modify your /etc/tabs and add the following entries:
+        2. If you are not on Mac, you need to modify your `/etc/tabs` and add the following entries:
 
-    0.0.0.0 bandzoogle.dev
-    0.0.0.0 xyz.bandzoogle.dev # to serve a site named xyz locally
+                0.0.0.0 bandzoogle.dev
+                0.0.0.0 xyz.bandzoogle.dev # to serve a site named xyz locally
 
 Now bandzoogle will be running in [http://bandzoogle.dev](http://bandzoogle.dev)
 
