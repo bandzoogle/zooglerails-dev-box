@@ -1,95 +1,81 @@
 # z-dev-box
 
-This is a [Vagrant](http://www.vagrantup.com/) box for Rails development that includes MySQL and other common dependencies.
+This is a [Vagrant](http://www.vagrantup.com/) box for setting up a Bandzoogle development box. It includes MySQL and other needed dependencies.
 
 This project is a modified fork of the [rails-dev-box](https://github.com/rails/rails-dev-box) by [@fxn](https://github.com/fxn). All the kudos to him.
 
-## Requirements
+## Initial configuration
 
-You need to install:
+Execute the following commands in the terminal:
 
-1. [VirtualBox](https://www.virtualbox.org)
+0. Install [Vagrant](http://www.vagrantup.com/) and [Virtual Box](https://www.virtualbox.org/).
 
-2. [Vagrant](http://vagrantup.com)
+1. Clone the `zooglerails-dev-box` project and switch to its folder:
 
-## Usage
+        git clone https://github.com/bandzoogle/zooglerails-dev-box.git
+        cd zooglerails-dev-box
 
-1. Build the virtual machine
+2. Clone `zooglerails` into the `zooglerails-dev-box` folder and checkout the `development` branch (our main branch for daily development).
 
-    ```
-    git clone https://github.com/jorgemanrubia/z-dev-box
-    cd z-dev-box
-    vagrant up
-    ```
+        git clone https://github.com/bandzoogle/zooglerails.git
+        cd zooglerails
+        git checkout development
+        cd ..
 
-2. Clone the repo containing the Rails app you want to run in the VM. Do it inside the VM folder.
+3. Generate the VM
 
-    ```bash
-    git clone https://github.com/jorgemanrubia/some-rails-app.git
-    ls # README.md puppet Vagrantfile some-rails-app
-    ```
+        vagrant up
 
-3. Now you can connect to the VM via SSH. The shared directory `/vagrant` in the VM is linked to the VM folder in the host computer:
+4. SSH into the VM
 
-    ```bash
-    vagrant ssh 
-    ls /vagrant # README.md puppet Vagrantfile some-rails-app
-    ```
+        vagrant ssh # now you are inside the VM
 
-The recommended workflow is
+5. The `/vagrant` directory inside the VM will point to your `zooglerails-dev-box` directory. So switch to it and initialize the Rails environment:
 
-* Edit in the host computer where you have your editor, git and your SSH keys properly configured
+        cd /vagrant/zooglerails
+        cp config/local.yml.sample config/local.yml
+        bundle
+        bundle exec rake db:migrate
+        bundle exec rake db:seed_fu
 
-* Test and run things in the virtual machine
+6. Run the server: this command will run the server and a delayed job process for background jobs
 
-## Box contents
+        foreman start
 
-It is a minimal Ubuntu (Precise Pangolin) containing:
+If you are on Mac, install Pow:
 
-* Git
+1. Install [pow](http://pow.cx/)
+        
+        curl get.pow.cx | sh
 
-* RVM
+2. In a fresh terminal window
 
-* Ruby 1.9.3 (binary RVM install)
+        cd ~/.pow
+        echo 3000 > banzdoogle
 
-* Bundler
+If you are not on Mac, you need to modify your /etc/tabs and add the following entries:
 
-* MySQL
+    0.0.0.0 bandzoogle.dev
+    0.0.0.0 xyz.bandzoogle.dev # to serve a site named xyz locally
 
-* ImageMagick
+Now bandzoogle will be running in [http://bandzoogle.dev](http://bandzoogle.dev)
 
-* System dependencies for nokogiri, mysql, capybara-webkit and imagemagick
+## Daily workflow
 
-## Documentation
+Work normally using your local editor in the folder `zooglerails-dev-box/zooglerails`. Use git normally to update and push your changes.
 
-Init an SSH session in the Virtual Machine:
+Start the server in the VM:
 
-    vagrant ssh
+1. SSH into the VM
 
-When done just log out with `^D` and suspend the virtual machine
+        vagrant up # not needed if the VM is already running
+        vagrant ssh
 
-    vagrant suspend
+2. Run the server
 
-then, resume to hack again
+        cd /vagrant/zooglerails
+        foreman start
 
-    vagrant resume
-
-Run
-
-    vagrant halt
-
-to shutdown the virtual machine, and
-
-    vagrant up
-
-to boot it again.
-
-You can find out the state of a virtual machine anytime by invoking
-
-    vagrant status
-
-Finally, to completely wipe the virtual machine from the disk **destroying all its contents**:
-
-    vagrant destroy # DANGER: all is gone
-
-Please check the [Vagrant documentation](http://vagrantup.com/v1/docs/index.html) for more information on Vagrant.
+        # To run ocassionally:
+        bundle install # install new libraries/versions. They change often. The app will fail to load until you do this
+        bundle exec rake db:migrate # if you need to run the migrations because the database structure has changed
