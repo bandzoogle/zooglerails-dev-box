@@ -51,7 +51,9 @@ If you are not on Mac, you need to modify your `/etc/tabs` and add the following
         0.0.0.0 bandzoogle.dev
         0.0.0.0 xyz.bandzoogle.dev # to serve a site named xyz locally
 
-Now you canrun the server: this command will run the server and a delayed job process for background jobs
+### Run the server
+
+Now you can run the server: this command will run the server and a delayed job process for background jobs
 
         foreman start
 
