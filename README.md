@@ -38,10 +38,6 @@ Execute the following commands in the terminal:
         bundle exec rake db:migrate
         bundle exec rake db:seed_fu
 
-6. Run the server: this command will run the server and a delayed job process for background jobs
-
-        foreman start
-
 7. The app needs to be served from bandzoogle.dev (no localhost or 0.0.0.0):
 
 If you are on Mac, using [pow](http://pow.cx/) is recommended. Do the following in a fresh terminal window (not inside the Vagrant ssh session):
@@ -55,7 +51,12 @@ If you are not on Mac, you need to modify your `/etc/tabs` and add the following
         0.0.0.0 bandzoogle.dev
         0.0.0.0 xyz.bandzoogle.dev # to serve a site named xyz locally
 
-Now bandzoogle will be running in [http://bandzoogle.dev](http://bandzoogle.dev)
+Now you canrun the server: this command will run the server and a delayed job process for background jobs
+
+        foreman start
+
+Bandzoogle will be running in [http://bandzoogle.dev](http://bandzoogle.dev)
+
 
 ## Daily workflow
 
