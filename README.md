@@ -42,7 +42,7 @@ Execute the following commands in the terminal:
 
         foreman start
 
-7. The app needs to be serverd from bandzoogle.dev (no localhost or 0.0.0.0):
+7. The app needs to be served from bandzoogle.dev (no localhost or 0.0.0.0):
 
 If you are on Mac, using Pow is recommended:
 
