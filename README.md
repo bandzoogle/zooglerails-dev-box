@@ -44,14 +44,9 @@ Execute the following commands in the terminal:
 
 7. The app needs to be served from bandzoogle.dev (no localhost or 0.0.0.0):
 
-If you are on Mac, using Pow is recommended:
-
-1. Install [pow](http://pow.cx/)
+If you are on Mac, using [pow](http://pow.cx/) is recommended. Do the following in a fresh terminal window (not inside the Vagrant ssh session):
 
         curl get.pow.cx | sh
-
-2. In a fresh terminal window
-
         cd ~/.pow
         echo 3000 > banzdoogle
 
