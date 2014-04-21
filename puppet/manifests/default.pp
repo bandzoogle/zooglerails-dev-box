@@ -74,15 +74,6 @@ package { ['libcurl3', 'libcurl3-gnutls', 'libcurl4-openssl-dev', 'libgeoip-dev'
   ensure => installed
 }
 
-#Elasticsearch
-exec{
-  'wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.1.0.deb'
-}
-
-exec{
-  'sudo dpkg -i elasticsearch-1.1.0.deb'
-}
-
 # ExecJS runtime.
 package { 'nodejs':
   ensure => installed
