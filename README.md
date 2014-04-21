@@ -42,7 +42,7 @@ Execute the following commands in the terminal:
 
         foreman start
 
-If you are on Mac, install Pow:
+If you are on Mac, Pow is recommended:
 
 1. Install [pow](http://pow.cx/)
         
