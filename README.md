@@ -1,4 +1,4 @@
-# z-dev-box
+# zooglerails-dev-box
 
 This is a [Vagrant](http://www.vagrantup.com/) box for setting up a Bandzoogle development box. It includes MySQL and other needed dependencies.
 
