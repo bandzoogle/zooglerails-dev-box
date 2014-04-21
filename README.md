@@ -76,6 +76,7 @@ Start the server in the VM:
         cd /vagrant/zooglerails
         foreman start
 
-        # To run ocassionally:
+### Commands to run ocassionally:
+
         bundle install # install new libraries/versions. They change often. The app will fail to load until you do this
         bundle exec rake db:migrate # if you need to run the migrations because the database structure has changed
