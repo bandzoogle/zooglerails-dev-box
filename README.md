@@ -44,7 +44,7 @@ If you are on Mac, using [pow](http://pow.cx/) is recommended. Do the following 
 
         curl get.pow.cx | sh
         cd ~/.pow
-        echo 3000 > banzdoogle
+        echo 3000 > bandzoogle
 
 If you are not on Mac, you need to modify your `/etc/tabs` and add the following entries:
 
