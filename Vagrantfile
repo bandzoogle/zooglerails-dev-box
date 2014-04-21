@@ -8,6 +8,9 @@ Vagrant.configure('2') do |config|
     v.cpus = 2
   end
 
+  config.vm.synced_folder ".", "/vagrant", :nfs => true
+  config.vm.network :private_network, ip: "10.11.12.13"
+
   config.vm.network :forwarded_port, guest: 3000, host: 3000
 
   config.vm.provision :puppet do |puppet|
