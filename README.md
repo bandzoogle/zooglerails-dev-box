@@ -46,7 +46,7 @@ If you are on Mac, using [pow](http://pow.cx/) is recommended. Do the following 
         cd ~/.pow
         echo 3000 > bandzoogle
 
-If you are not on Mac, you need to modify your `/etc/tabs` and add the following entries:
+If you are not on Mac, you need to modify your `/etc/hosts` and add the following entries:
 
         0.0.0.0 bandzoogle.dev
         0.0.0.0 xyz.bandzoogle.dev # to serve a site named xyz locally
