@@ -30,7 +30,9 @@ Execute the following commands in the terminal:
 
         vagrant ssh # now you are inside the VM
 
-5. The `/vagrant` directory inside the VM will point to your `zooglerails-dev-box` directory. Switch to it and initialize the Rails environment:
+5. You will need to establish your SSH key in order to synch with our git repos and complete the rest of the initialization. To do this, follow the directions here: https://help.github.com/articles/generating-ssh-keys/
+
+6. The `/vagrant` directory inside the VM will point to your `zooglerails-dev-box` directory. Switch to it and initialize the Rails environment:
 
         cd /vagrant/zooglerails
         cp config/local.yml.sample config/local.yml
