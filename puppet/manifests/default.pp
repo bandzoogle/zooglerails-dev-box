@@ -74,6 +74,11 @@ package { ['libcurl3', 'libcurl3-gnutls', 'libcurl4-openssl-dev', 'libgeoip-dev'
   ensure => installed
 }
 
+# ImageOptim dependencies.
+package { ['advancecomp', 'gifsicle', 'jhead', 'jpegoptim', 'libjpeg-progs', 'optipng', 'pngcrush', 'pngquant']:
+  ensure => installed
+}
+
 # ExecJS runtime.
 package { 'nodejs':
   ensure => installed
