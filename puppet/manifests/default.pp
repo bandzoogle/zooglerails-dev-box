@@ -4,7 +4,7 @@ $home         = '/home/vagrant'
 
 # Pick a Ruby version modern enough, that works in the currently supported Rails
 # versions, and for which RVM provides binaries.
-$ruby_version = '2.1.2-p195'
+$ruby_version = '2.1.2'
 
 Exec {
 path => ['/usr/sbin', '/usr/bin', '/sbin', '/bin']
@@ -80,6 +80,11 @@ package { 'nodejs':
 }
 
 # --- Ruby ---------------------------------------------------------------------
+
+exec { 'prepare gpg':
+  command => "gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3; ",
+  creates => "${home}/.gnupg/trustdb.gpg"
+}
 
 exec { 'install_rvm':
   command => "${as_vagrant} 'curl -L https://get.rvm.io | bash -s stable'",
