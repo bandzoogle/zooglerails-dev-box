@@ -8,31 +8,31 @@ This project is a modified fork of the [rails-dev-box](https://github.com/rails/
 
 Execute the following commands in the terminal:
 
-0. Install [Vagrant](http://www.vagrantup.com/) and [Virtual Box](https://www.virtualbox.org/).
+1. Install [Vagrant](http://www.vagrantup.com/) and [Virtual Box](https://www.virtualbox.org/).
 
-1. Clone the `zooglerails-dev-box` project and switch to its folder:
+2. Clone the `zooglerails-dev-box` project and switch to its folder:
 
         git clone https://github.com/bandzoogle/zooglerails-dev-box.git
         cd zooglerails-dev-box
 
-2. Clone `zooglerails` into the `zooglerails-dev-box` folder and checkout the `development` branch (our main branch for daily development).
+3. Clone `zooglerails` into the `zooglerails-dev-box` folder and checkout the `development` branch (our main branch for daily development).
 
         git clone https://github.com/bandzoogle/zooglerails.git
         cd zooglerails
         git checkout development
         cd ..
 
-3. Generate the VM
+4. Generate the VM
 
         vagrant up
 
-4. SSH into the VM
+5. SSH into the VM
 
         vagrant ssh # now you are inside the VM
 
-5. You will need to establish your SSH key in order to synch with our git repos and complete the rest of the initialization. To do this, follow the directions here: https://help.github.com/articles/generating-ssh-keys/
+6. You will need to establish your SSH key in order to synch with our git repos and complete the rest of the initialization. To do this, follow the directions here: https://help.github.com/articles/generating-ssh-keys/
 
-6. The `/vagrant` directory inside the VM will point to your `zooglerails-dev-box` directory. Switch to it and initialize the Rails environment:
+7. The `/vagrant` directory inside the VM will point to your `zooglerails-dev-box` directory. Switch to it and initialize the Rails environment:
 
         cd /vagrant/zooglerails
         cp config/local.yml.sample config/local.yml
@@ -40,20 +40,20 @@ Execute the following commands in the terminal:
         bundle exec rake db:migrate
         bundle exec rake db:seed_fu
 
-7. The app needs to be served from bandzoogle.dev (no localhost or 0.0.0.0):
+8. The app needs to be served from bandzoogle.dev (no localhost or 0.0.0.0):
 
-If you are on Mac, using [pow](http://pow.cx/) is recommended. Do the following in a fresh terminal window (not inside the Vagrant ssh session):
+  If you are on Mac, using [pow](http://pow.cx/) is recommended. Do the following in a fresh terminal window (not inside the Vagrant ssh session):
 
         curl get.pow.cx | sh
         cd ~/.pow
         echo 3000 > bandzoogle
 
-If you are not on Mac, you need to modify your `/etc/hosts` and add the following entries:
+  If you are not on Mac, you need to modify your `/etc/hosts` and add the following entries:
 
         0.0.0.0 bandzoogle.dev
         0.0.0.0 xyz.bandzoogle.dev # to serve a site named xyz locally
 
-8. The app will need to process the stock images that have been loaded with the seeds. To do so it does make use of a tmp directory which may not have the permissions set accordingly. To change this, you can ssh into the box, create the folder, adjust its permissions, and then return to your zooglerails directory:
+9. The app will need to process the stock images that have been loaded with the seeds. To do so it does make use of a tmp directory which may not have the permissions set accordingly. To change this, you can ssh into the box, create the folder, adjust its permissions, and then return to your zooglerails directory:
 
         cd /mnt
         mkdir tmp
