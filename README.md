@@ -53,6 +53,13 @@ If you are not on Mac, you need to modify your `/etc/hosts` and add the followin
         0.0.0.0 bandzoogle.dev
         0.0.0.0 xyz.bandzoogle.dev # to serve a site named xyz locally
 
+8. The app will need to process the stock images that have been loaded with the seeds. To do so it does make use of a tmp directory which may not have the permissions set accordingly. To change this, you can ssh into the box, create the folder, adjust its permissions, and then return to your zooglerails directory:
+
+        cd /mnt
+        mkdir tmp
+        sudo chmod 777 tmp
+        cd /vagrant/zooglerails
+
 ### Run the server
 
 Now you can run the server: this command will run the server and a delayed job process for background jobs
