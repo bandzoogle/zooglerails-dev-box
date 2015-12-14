@@ -1,3 +1,5 @@
+# Warning: this box is deprecated. Use the one in `zooglerails` project instead. Check https://github.com/bandzoogle/zooglerails/wiki/Using%20Vagrant%20for%20local%20development
+
 # zooglerails-dev-box
 
 This is a [Vagrant](http://www.vagrantup.com/) box for setting up a Bandzoogle development box. It includes MySQL and other needed dependencies.
