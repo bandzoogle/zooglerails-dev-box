@@ -1,4 +1,4 @@
-# Warning: this box is deprecated. Use the one in `zooglerails` project instead. [Check this](https://github.com/bandzoogle/zooglerails/wiki/Using%20Vagrant%20for%20local%20development)
+# Warning: this box is deprecated. Use the one in `zooglerails` project instead. [Check this](https://github.com/bandzoogle/zooglerails/wiki/Install%20local%20environment%20with%20vagrant)
 
 # zooglerails-dev-box
 
